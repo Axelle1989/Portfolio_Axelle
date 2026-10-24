@@ -1,0 +1,260 @@
+export type Language = 'fr' | 'en';
+
+export const translations = {
+  fr: {
+    nav: {
+      home: "Accueil",
+      about: "À propos",
+      skills: "Compétences",
+      projects: "Projets",
+      journey: "Parcours",
+      traits: "Mon approche",
+      contact: "Contact",
+      downloadCv: "Télécharger mon CV",
+      cvNotReady: "CV bientôt disponible",
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
+      switchTheme: "Changer de thème",
+      switchLang: "English version",
+    },
+    hero: {
+      greeting: "Bonjour, moi c'est",
+      name: "Axelle.",
+      badge: "Étudiante Tek 3 • Epitech Bénin",
+      location: "Basée à Cotonou, Bénin",
+      bio: "Étudiante en informatique à Epitech Bénin, je conçois des solutions numériques à travers le développement web et logiciel, tout en explorant l'intelligence artificielle et l'analyse de données.",
+      motto: "« J'apprends en construisant, je progresse en expérimentant. »",
+      ctaProjects: "Découvrir mes projets",
+      ctaContact: "Me contacter",
+      socialGithub: "Profil GitHub",
+      socialLinkedin: "Profil LinkedIn (bientôt)",
+      codeSnippetTitle: "terminal ~ axelle",
+    },
+    about: {
+      sectionBadge: "Présentation",
+      title: "Construire, comprendre, progresser",
+      p1: "Je m'appelle Axelle Kafui HOSSOU, étudiante en 3e année (Tek 3) à Epitech Bénin. Ma trajectoire est guidée par l'envie d'apprendre par la réalisation de projets tangibles et de comprendre le fonctionnement des technologies que j'utilise.",
+      p2: "À travers les projets rigoureux d'Epitech — allant des fondations en C et C++ jusqu'à des systèmes de jeu vidéo multijoueur comme R-TYPE — ainsi que mes propres initiatives comme la plateforme YOLITA et mon stage chez NOCIBE, je consolide jour après jour mes compétences d'ingénierie logicielle.",
+      interestsTitle: "Mes domaines d'intérêt :",
+      interests: [
+        "Création d'applications web modernes et intuitives",
+        "Développement et logique logicielle (C, C++, Python)",
+        "Exploration de l'intelligence artificielle et de l'analyse de données",
+        "Conception de solutions adaptées à des besoins d'entreprises réels",
+        "Résolution collaborative de problèmes complexes"
+      ],
+      visionText: "Mon ambition est d'acquérir une solide expérience professionnelle en stage ou alternance, puis de poursuivre mon parcours académique à l'étranger dans les domaines de l'informatique, de l'IA ou de la Data."
+    },
+    skills: {
+      sectionBadge: "Expertise en construction",
+      title: "Compétences & Outils",
+      subtitle: "Un ensemble de technologies apprises par la pratique, présentées en toute transparence.",
+      categories: {
+        all: "Toutes",
+        web: "Développement web",
+        software: "Programmation & Logiciel",
+        'ai-data': "Data & IA",
+        tools: "Outils & Environnement",
+        transversal: "Compétences transversales"
+      },
+      statusAcquired: "Pratiqué sur projet",
+      statusLearning: "En cours d'apprentissage",
+      noteTitle: "Détails"
+    },
+    projects: {
+      sectionBadge: "Réalisations",
+      title: "Mes projets",
+      subtitle: "Découvrez mes réalisations scolaires, professionnelles et entrepreneuriales. Cliquez sur une carte pour voir les détails complets.",
+      filterAll: "Tous les projets",
+      filterWeb: "Développement web",
+      filterSoftware: "Développement logiciel",
+      filterAiData: "IA & Data",
+      filterPersonal: "Projets personnels",
+      filterAcademic: "Projets académiques",
+      viewDetails: "Voir les détails",
+      viewProject: "Voir le projet",
+      viewCode: "Code source",
+      liveDemo: "Démo en ligne",
+      statusCompleted: "Terminé",
+      statusInProgress: "En développement",
+      statusPrototype: "Prototype fonctionnel",
+      statusPlanned: "En réflexion",
+      modalRole: "Mon rôle & responsabilités",
+      modalFeatures: "Fonctionnalités clés",
+      modalChallenges: "Défis techniques & apprentissages",
+      modalProblem: "Problématique & besoin",
+      modalTech: "Technologies vérifiées",
+      repoAvailableSoon: "Dépôt bientôt accessible",
+      noProjectsFound: "Aucun projet ne correspond à ce filtre pour le moment."
+    },
+    journey: {
+      sectionBadge: "Parcours chronologique",
+      title: "Mon itinéraire",
+      subtitle: "Une chronologie de mes étapes clés de formation, expériences en entreprise et projets fondateurs."
+    },
+    traits: {
+      sectionBadge: "ADN de travail",
+      title: "Ce qui me caractérise",
+      subtitle: "Une démarche pragmatique, curieuse et orientée vers la résolution de défis concrets."
+    },
+    contact: {
+      sectionBadge: "Restons en contact",
+      title: "Échangeons sur vos opportunités",
+      subtitle: "À la recherche de stages, d'alternance ou de projets stimulants en développement logiciel, web ou data.",
+      locationTitle: "Localisation",
+      locationValue: "Cotonou, Bénin",
+      emailTitle: "E-mail",
+      emailValue: "Me contacter directement",
+      githubTitle: "GitHub",
+      githubAction: "Voir mes dépôts",
+      formName: "Votre nom",
+      formEmail: "Votre adresse e-mail",
+      formSubject: "Objet",
+      formMessage: "Votre message",
+      formSend: "Envoyer le message",
+      formSending: "Envoi en cours...",
+      formSuccess: "Merci pour votre message ! Je vous répondrai dans les plus brefs délais.",
+      formError: "Une erreur est survenue. Vous pouvez m'écrire directement par e-mail.",
+      directEmailBtn: "M'écrire par e-mail",
+    },
+    footer: {
+      rights: "Tous droits réservés.",
+      tagline: "Étudiante en informatique • Développeuse • Créatrice de solutions numériques.",
+      builtWith: "Conçu avec React, TypeScript et Tailwind CSS."
+    },
+    cvModal: {
+      title: "Curriculum Vitae",
+      description: "Le document PDF de mon CV est en cours de finalisation et sera directement téléchargeable ici très prochainement.",
+      actionContact: "Me contacter pour recevoir mon CV",
+      close: "Fermer"
+    }
+  },
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      skills: "Skills",
+      projects: "Projects",
+      journey: "Journey",
+      traits: "Mindset",
+      contact: "Contact",
+      downloadCv: "Download CV",
+      cvNotReady: "CV available soon",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      switchTheme: "Switch theme",
+      switchLang: "Version française",
+    },
+    hero: {
+      greeting: "Hello, I am",
+      name: "Axelle.",
+      badge: "Tek 3 Student • Epitech Benin",
+      location: "Based in Cotonou, Benin",
+      bio: "Computer science student at Epitech Benin, I build digital solutions through web and software development, while exploring artificial intelligence and data analysis.",
+      motto: "“I learn by building, I grow by experimenting.”",
+      ctaProjects: "Explore my projects",
+      ctaContact: "Get in touch",
+      socialGithub: "GitHub Profile",
+      socialLinkedin: "LinkedIn Profile (soon)",
+      codeSnippetTitle: "terminal ~ axelle",
+    },
+    about: {
+      sectionBadge: "About Me",
+      title: "Building, understanding, growing",
+      p1: "My name is Axelle Kafui HOSSOU, a 3rd-year computer science student (Tek 3) at Epitech Benin. My journey is guided by a strong desire to learn through tangible projects and thoroughly understand how the technologies I use work under the hood.",
+      p2: "Through demanding Epitech projects — ranging from low-level foundations in C and C++ to multiplayer game engines such as R-TYPE — alongside my own ventures like the YOLITA platform and my internship at NOCIBE, I continuously strengthen my software engineering competencies.",
+      interestsTitle: "Areas of focus & interest:",
+      interests: [
+        "Modern and intuitive web applications development",
+        "Software engineering and logic (C, C++, Python)",
+        "Exploring artificial intelligence and data analytics",
+        "Building digital solutions tailored for real business operations",
+        "Collaborative problem-solving on complex systems"
+      ],
+      visionText: "My ambition is to gain solid industry experience through internships and work-study opportunities, before pursuing international graduate studies in computer science, AI, or Data."
+    },
+    skills: {
+      sectionBadge: "Growing Skillset",
+      title: "Skills & Tooling",
+      subtitle: "Technologies acquired through hands-on practice, presented with complete transparency.",
+      categories: {
+        all: "All",
+        web: "Web Development",
+        software: "Software & Systems",
+        'ai-data': "Data & AI",
+        tools: "Tools & Environment",
+        transversal: "Transversal Skills"
+      },
+      statusAcquired: "Applied on projects",
+      statusLearning: "Currently learning",
+      noteTitle: "Details"
+    },
+    projects: {
+      sectionBadge: "Portfolio",
+      title: "Featured Projects",
+      subtitle: "Discover my academic, professional, and entrepreneurial projects. Click any card to inspect full details.",
+      filterAll: "All Projects",
+      filterWeb: "Web Development",
+      filterSoftware: "Software Development",
+      filterAiData: "AI & Data",
+      filterPersonal: "Personal Projects",
+      filterAcademic: "Academic Projects",
+      viewDetails: "View details",
+      viewProject: "Visit project",
+      viewCode: "Source code",
+      liveDemo: "Live demo",
+      statusCompleted: "Completed",
+      statusInProgress: "In active development",
+      statusPrototype: "Working prototype",
+      statusPlanned: "Planned",
+      modalRole: "My role & responsibilities",
+      modalFeatures: "Key features",
+      modalChallenges: "Technical challenges & learnings",
+      modalProblem: "Problem statement & user need",
+      modalTech: "Verified technologies",
+      repoAvailableSoon: "Repository available soon",
+      noProjectsFound: "No projects match this category yet."
+    },
+    journey: {
+      sectionBadge: "Chronology",
+      title: "My Journey",
+      subtitle: "Key educational milestones, industry immersion, and foundational projects."
+    },
+    traits: {
+      sectionBadge: "Working DNA",
+      title: "What Defines My Approach",
+      subtitle: "A pragmatic, curious, and iterative mindset dedicated to solving concrete problems."
+    },
+    contact: {
+      sectionBadge: "Let's connect",
+      title: "Let's discuss opportunities",
+      subtitle: "Open to internship, work-study, and collaborative challenges in software, web, and data.",
+      locationTitle: "Location",
+      locationValue: "Cotonou, Benin",
+      emailTitle: "E-mail",
+      emailValue: "Reach out directly",
+      githubTitle: "GitHub",
+      githubAction: "View repositories",
+      formName: "Your name",
+      formEmail: "Your email address",
+      formSubject: "Subject",
+      formMessage: "Your message",
+      formSend: "Send message",
+      formSending: "Sending...",
+      formSuccess: "Thank you for reaching out! I will respond promptly.",
+      formError: "Something went wrong. Please reach out to me directly via email.",
+      directEmailBtn: "Email me directly",
+    },
+    footer: {
+      rights: "All rights reserved.",
+      tagline: "Computer science student • Developer • Digital solutions builder.",
+      builtWith: "Crafted with React, TypeScript & Tailwind CSS."
+    },
+    cvModal: {
+      title: "Curriculum Vitae",
+      description: "My formal PDF résumé is being polished and will be directly downloadable here very soon.",
+      actionContact: "Contact me to request my CV directly",
+      close: "Close"
+    }
+  }
+};

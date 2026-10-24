@@ -95,15 +95,15 @@ export const projectsData: Project[] = [
   },
   {
     id: "yolita",
-    title: "YOLITA",
+    title: "YOLITA — E-commerce Yaourt Naturel",
     slug: "yolita",
     shortDescription: {
-      fr: "Plateforme numérique et commerciale pour une marque de yaourt naturel artisanal (« C'est Yolita »).",
-      en: "Digital showcase and sales management platform for an artisanal natural yogurt brand ('C'est Yolita')."
+      fr: "Site e-commerce et vitrine commerciale pour une marque de yaourt naturel artisanal (« C'est Yolita »).",
+      en: "E-commerce store and digital showcase for an artisanal natural yogurt brand ('C'est Yolita')."
     },
     description: {
-      fr: "YOLITA est un projet entrepreneurial et numérique né autour de la marque de yaourt naturel artisanal préparé par ma mère. J'ai conçu cette solution pour allier valorisation de marque, expérience client fluide et organisation rigoureuse des ventes.",
-      en: "YOLITA is an entrepreneurial and digital project built around the natural artisanal yogurt brand created by my mother. I designed this solution to combine brand elevation, seamless customer experience, and structured sales management."
+      fr: "YOLITA est une solution e-commerce et un projet entrepreneurial né autour de la marque de yaourt naturel artisanal préparé par ma mère. J'ai conçu et développé ce site web pour allier valorisation de marque, catalogue produit interactif, expérience d'achat et organisation des commandes.",
+      en: "YOLITA is an e-commerce platform and entrepreneurial venture built around the artisanal natural yogurt brand created by my mother. I designed and developed this website to combine brand storytelling, interactive product catalog, shopping experience, and order management."
     },
     problemStatement: {
       fr: "Passer d'une gestion manuelle informelle à un outil centralisé permettant de présenter l'offre aux clients, de valoriser l'identité de marque et de structurer le suivi des commandes au détail et en gros.",

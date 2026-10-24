@@ -20,7 +20,8 @@ export interface ProfileConfig {
     en: string;
   };
   location: string;
-  email: string;
+  email: string; // Email académique Epitech
+  personalEmail: string; // Email personnel
   phone: string;
   githubUrl: string;
   linkedinUrl: string;
@@ -51,6 +52,7 @@ export const profileData: ProfileConfig = {
   },
   location: "Godomey, Calavi / Cotonou, Bénin",
   email: "axo.hossou@epitech.eu",
+  personalEmail: "axellehossou690@gmail.com",
   phone: "+229 01 47 81 67 78",
   githubUrl: "https://github.com/Axelle1989",
   linkedinUrl: "https://www.linkedin.com/in/axelle-hossou",

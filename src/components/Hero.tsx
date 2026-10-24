@@ -149,9 +149,19 @@ export const Hero: React.FC = () => {
               <a
                 href={`mailto:${profileData.email}`}
                 className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                title="E-mail Epitech"
               >
                 <Mail className="w-3.5 h-3.5 text-brand-500" />
                 <span>{profileData.email}</span>
+              </a>
+
+              <a
+                href={`mailto:${profileData.personalEmail}`}
+                className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                title="E-mail Personnel"
+              >
+                <Mail className="w-3.5 h-3.5 text-rose-500" />
+                <span>{profileData.personalEmail}</span>
               </a>
             </div>
 

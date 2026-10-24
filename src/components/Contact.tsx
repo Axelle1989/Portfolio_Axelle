@@ -64,7 +64,7 @@ export const Contact: React.FC = () => {
           {/* Direct Details Column */}
           <div className="lg:col-span-5 space-y-4">
             
-            {/* Email Card */}
+            {/* Epitech Email Card */}
             <a
               href={`mailto:${profileData.email}`}
               className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
@@ -75,7 +75,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                    {t.contact.emailTitle}
+                    E-mail Étudiant (Epitech)
                   </h3>
                   <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 group-hover:text-brand-500 transition-colors">
                     {profileData.email}
@@ -83,6 +83,27 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
               <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-brand-500 transition-colors" />
+            </a>
+
+            {/* Personal Email Card */}
+            <a
+              href={`mailto:${profileData.personalEmail}`}
+              className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-950/60 flex items-center justify-center text-rose-600 dark:text-rose-400 shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    E-mail Personnel
+                  </h3>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 group-hover:text-rose-500 transition-colors">
+                    {profileData.personalEmail}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-rose-500 transition-colors" />
             </a>
 
             {/* Phone Card */}

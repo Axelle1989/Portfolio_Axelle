@@ -9,7 +9,8 @@ import {
   Sparkles, 
   Code2, 
   Database, 
-  Cpu 
+  Cpu,
+  FileDown
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
@@ -55,19 +56,32 @@ export const Hero: React.FC = () => {
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400">
                 <MapPin className="w-3 h-3 text-brand-500" />
-                {t.hero.location}
+                {profileData.location}
               </span>
             </div>
 
-            {/* Main Catchphrase */}
+            {/* Main Catchphrase with Avatar on small screens */}
             <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-                {t.hero.greeting}{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-cyan dark:from-brand-400 dark:via-brand-300 dark:to-accent-cyan">
-                  {profileData.shortName}.
-                </span>
-              </h1>
-              <p className="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed pt-2">
+              <div className="flex items-center gap-4">
+                <img 
+                  src={profileData.photoUrl} 
+                  alt={profileData.fullName}
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover ring-2 ring-brand-500/40 shadow-lg shadow-brand-500/20 shrink-0" 
+                />
+                <div>
+                  <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
+                    {t.hero.greeting}{' '}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-cyan dark:from-brand-400 dark:via-brand-300 dark:to-accent-cyan">
+                      {profileData.shortName}.
+                    </span>
+                  </h1>
+                  <p className="text-xs sm:text-sm font-mono text-brand-600 dark:text-brand-400 font-semibold mt-0.5">
+                    {language === 'fr' ? profileData.tagline.fr : profileData.tagline.en}
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-base sm:text-lg font-medium text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed pt-2">
                 {language === 'fr' ? profileData.heroBio.fr : profileData.heroBio.en}
               </p>
             </div>
@@ -97,32 +111,48 @@ export const Hero: React.FC = () => {
                 <Mail className="w-4 h-4 text-brand-500" />
                 <span>{t.hero.ctaContact}</span>
               </button>
+
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-800 hover:bg-brand-100 dark:hover:bg-brand-900/60 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>{t.nav.downloadCv}</span>
+              </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800/80 w-full">
+            {/* Social Links & Direct Contacts */}
+            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-slate-200 dark:border-slate-800/80 w-full text-xs font-mono text-slate-600 dark:text-slate-400">
               <a
                 href={profileData.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                 title={t.hero.socialGithub}
               >
                 <GithubIcon className="w-4 h-4" />
-                <span>github.com/Axelle1989</span>
+                <span>@Axelle1989</span>
               </a>
 
-              {profileData.linkedinUrl && (
-                <a
-                  href={profileData.linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                  <span>LinkedIn</span>
-                </a>
-              )}
+              <a
+                href={profileData.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+                <span>@Axelle HOSSOU</span>
+              </a>
+
+              <a
+                href={`mailto:${profileData.email}`}
+                className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-brand-500" />
+                <span>{profileData.email}</span>
+              </a>
             </div>
 
           </div>
@@ -140,20 +170,25 @@ export const Hero: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-mono text-slate-500 dark:text-slate-400">
                   <Terminal className="w-3.5 h-3.5" />
-                  <span>dev.axelle.ts</span>
+                  <span>axelle.config.ts</span>
                 </div>
               </div>
 
               {/* Code / Profile Preview */}
-              <div className="pt-4 font-mono text-xs sm:text-sm leading-relaxed space-y-2.5 text-slate-700 dark:text-slate-300">
+              <div className="pt-4 font-mono text-xs sm:text-sm leading-relaxed space-y-2 text-slate-700 dark:text-slate-300">
                 <p>
                   <span className="text-brand-600 dark:text-brand-400 font-semibold">const</span>{' '}
-                  <span className="text-sky-600 dark:text-sky-300 font-semibold">developer</span> = &#123;
+                  <span className="text-sky-600 dark:text-sky-300 font-semibold">axelle</span> = &#123;
                 </p>
                 
                 <p className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">name:</span>{' '}
+                  <span className="text-slate-500 dark:text-slate-400">fullName:</span>{' '}
                   <span className="text-emerald-600 dark:text-emerald-400">"Axelle Kafui HOSSOU"</span>,
+                </p>
+
+                <p className="pl-4">
+                  <span className="text-slate-500 dark:text-slate-400">role:</span>{' '}
+                  <span className="text-emerald-600 dark:text-emerald-400">"Dev Web & Data Junior"</span>,
                 </p>
 
                 <p className="pl-4">
@@ -162,26 +197,30 @@ export const Hero: React.FC = () => {
                 </p>
 
                 <p className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">focus:</span> [
-                  <span className="text-amber-600 dark:text-amber-300">"Web"</span>,{' '}
-                  <span className="text-amber-600 dark:text-amber-300">"Software"</span>,{' '}
-                  <span className="text-amber-600 dark:text-amber-300">"AI/Data"</span>],
+                  <span className="text-slate-500 dark:text-slate-400">coreStack:</span> [
+                  <span className="text-amber-600 dark:text-amber-300">"Python"</span>,{' '}
+                  <span className="text-amber-600 dark:text-amber-300">"C++"</span>,{' '}
+                  <span className="text-amber-600 dark:text-amber-300">"React"</span>,{' '}
+                  <span className="text-amber-600 dark:text-amber-300">"Pandas"</span>],
                 </p>
 
                 <p className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">currentProjects:</span> [
+                  <span className="text-slate-500 dark:text-slate-400">activeProjects:</span> [
+                  <span className="text-indigo-600 dark:text-indigo-300">"Market Go"</span>,{' '}
                   <span className="text-indigo-600 dark:text-indigo-300">"YOLITA"</span>,{' '}
                   <span className="text-indigo-600 dark:text-indigo-300">"R-TYPE"</span>],
                 </p>
 
                 <p className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">mindset:</span>{' '}
-                  <span className="text-emerald-600 dark:text-emerald-400">"Learn by building"</span>,
+                  <span className="text-slate-500 dark:text-slate-400">education:</span> [
+                  <span className="text-cyan-600 dark:text-cyan-300">"Bachelor Informatique"</span>,{' '}
+                  <span className="text-cyan-600 dark:text-cyan-300">"Bac D"</span>],
                 </p>
 
                 <p className="pl-4">
-                  <span className="text-slate-500 dark:text-slate-400">status:</span>{' '}
-                  <span className="text-brand-600 dark:text-brand-300">"Open to internships & challenges"</span>
+                  <span className="text-slate-500 dark:text-slate-400">languages:</span> &#123;{' '}
+                  <span className="text-slate-400">fr:</span> <span className="text-emerald-500">"Natif"</span>,{' '}
+                  <span className="text-slate-400">en:</span> <span className="text-emerald-500">"B2"</span> &#125;
                 </p>
 
                 <p>&#125;;</p>
@@ -189,23 +228,12 @@ export const Hero: React.FC = () => {
                 <div className="pt-3 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
                   <span className="flex items-center gap-1.5">
                     <Code2 className="w-3.5 h-3.5 text-brand-500" />
-                    <span>C++ • React • Python</span>
+                    <span>C • C++ • Python • Haskell</span>
                   </span>
                   <span className="flex items-center gap-1">
                     <Database className="w-3.5 h-3.5 text-cyan-500" />
                     <Cpu className="w-3.5 h-3.5 text-indigo-500" />
                   </span>
-                </div>
-              </div>
-
-              {/* Avatar Slot Placeholder */}
-              <div className="mt-4 pt-3 border-t border-dashed border-slate-200 dark:border-slate-800 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 text-xs font-mono">
-                  AH
-                </div>
-                <div className="text-[11px] text-slate-500 dark:text-slate-400">
-                  <span className="font-medium text-slate-700 dark:text-slate-300">Photo personnelle :</span>
-                  <p>Emplacement prêt pour recevoir mon portrait</p>
                 </div>
               </div>
 

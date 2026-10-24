@@ -7,8 +7,8 @@ export const skillsData: Skill[] = [
     status: "acquired",
     category: "web",
     note: {
-      fr: "Intégration responsive, sémantique moderne et flexbox/grid",
-      en: "Responsive layout, modern semantics, flexbox & grid"
+      fr: "Intégration responsive, structuration sémantique et flexbox/grid",
+      en: "Responsive layout, semantic markup, flexbox & grid"
     }
   },
   {
@@ -16,17 +16,8 @@ export const skillsData: Skill[] = [
     status: "acquired",
     category: "web",
     note: {
-      fr: "DOM, programmation asynchrone, manipulation de données",
-      en: "DOM manipulation, asynchronous JS, data handling"
-    }
-  },
-  {
-    name: "React",
-    status: "acquired",
-    category: "web",
-    note: {
-      fr: "Composants, hooks d'état, interfaces modulaires",
-      en: "Component architecture, state hooks, modular UIs"
+      fr: "DOM, logique asynchrone, manipulation de données dynamiques",
+      en: "DOM manipulation, asynchronous JS, dynamic data handling"
     }
   },
   {
@@ -34,8 +25,17 @@ export const skillsData: Skill[] = [
     status: "acquired",
     category: "web",
     note: {
-      fr: "Stylisation utilitaire rapide, interfaces adaptatives",
-      en: "Utility-first styling, rapid responsive interfaces"
+      fr: "Stylisation utilitaire moderne, interfaces responsives et rapides",
+      en: "Modern utility-first styling, responsive high-performance interfaces"
+    }
+  },
+  {
+    name: "React",
+    status: "acquired",
+    category: "web",
+    note: {
+      fr: "Composants réutilisables, hooks d'état, interfaces réactives (YOLITA, prototypes)",
+      en: "Reusable components, state hooks, reactive interfaces (YOLITA, prototypes)"
     }
   },
 
@@ -54,113 +54,113 @@ export const skillsData: Skill[] = [
     status: "acquired",
     category: "software",
     note: {
-      fr: "Scripts, logique de traitement et découverte scientifique",
-      en: "Scripting, algorithmic logic and scientific exploration"
+      fr: "Scripts, analyse de données, logique logicielle et automatisation",
+      en: "Scripting, data analysis, software logic and automation"
     }
   },
   {
-    name: "Logique logicielle & Gameplay",
+    name: "CSFML",
     status: "acquired",
     category: "software",
     note: {
-      fr: "Gestion des boucles de jeu, collisions, apparitions (spawns)",
-      en: "Game loops, collision detection, entity spawns"
+      fr: "Bibliothèque multimédia C pour le rendu graphique 2D, fenêtrage et gestion audio",
+      en: "C multimedia library for 2D graphics rendering, windowing and audio"
+    }
+  },
+  {
+    name: "Haskell",
+    status: "acquired",
+    category: "software",
+    note: {
+      fr: "Programmation fonctionnelle pure, récursivité avancée et typage statique fort",
+      en: "Pure functional programming, advanced recursion and strong static typing"
     }
   },
 
   // 3. Data et intelligence artificielle
   {
     name: "Pandas",
-    status: "learning",
+    status: "acquired",
     category: "ai-data",
     note: {
-      fr: "Manipulation de séries et DataFrames, nettoyage de données (en cours d'approfondissement)",
-      en: "Series and DataFrames manipulation, data cleaning (actively deepening)"
+      fr: "Manipulation de séries et DataFrames, nettoyage et préparation de jeux de données",
+      en: "Series & DataFrames manipulation, data cleaning and preparation pipelines"
     }
   },
   {
-    name: "Scikit-learn",
-    status: "learning",
+    name: "IA au service des entreprises",
+    status: "acquired",
     category: "ai-data",
     note: {
-      fr: "Initiation aux modèles d'apprentissage automatique supervisé et non supervisé",
-      en: "Introduction to supervised and unsupervised machine learning models"
+      fr: "Expérience pratique lors du projet Discovery 2026 Epitech (solutions innovantes pour entreprises)",
+      en: "Hands-on experience during the Epitech Discovery 2026 project (AI corporate solutions)"
     }
   },
   {
-    name: "Exploration IA & Données",
+    name: "Scikit-learn & Machine Learning",
     status: "learning",
     category: "ai-data",
     note: {
-      fr: "Compréhension des flux de données et intégration de modèles",
-      en: "Understanding data pipelines and model integration"
+      fr: "Approfondissement des modèles prédictifs et de la classification de données",
+      en: "Deepening knowledge of predictive modeling and data classification"
     }
   },
 
   // 4. Outils de développement et collaboration
   {
-    name: "Git",
+    name: "Git & GitHub",
     status: "acquired",
     category: "tools",
     note: {
-      fr: "Gestion de versions, commits structurés, branches de travail",
-      en: "Version control, structured commits, feature branching"
+      fr: "Gestion de versions, commits conventionnels, branches et travail collaboratif",
+      en: "Version control, conventional commits, feature branches, team collaboration"
     }
   },
   {
-    name: "GitHub",
+    name: "Linux / Ubuntu",
     status: "acquired",
     category: "tools",
     note: {
-      fr: "Dépôts distants, pull requests, revues de code et collaboration",
-      en: "Remote repos, pull requests, code reviews, collaboration"
-    }
-  },
-  {
-    name: "Linux (Environnement Unix)",
-    status: "acquired",
-    category: "tools",
-    note: {
-      fr: "Terminal, commandes bash, environnement natif de travail Epitech",
-      en: "Command line, bash scripting, native Epitech environment"
+      fr: "Système de travail quotidien, commandes shell, administration basique et scripts",
+      en: "Daily workstation OS, shell commands, basic system admin and scripting"
     }
   },
 
-  // 5. Compétences transversales
+  // 5. Compétences transversales (Atouts du CV)
   {
-    name: "Travail en équipe & Peer-learning",
+    name: "Esprit créatif",
     status: "acquired",
     category: "transversal",
     note: {
-      fr: "Collaboration sur des projets complexes, communication et partage",
-      en: "Collaborating on complex projects, clear communication, peer learning"
+      fr: "Conception d'idées originales (Market Go, ateliers créatifs Digital Ninja)",
+      en: "Original ideation (Market Go, Digital Ninja creative workshops)"
     }
   },
   {
-    name: "Apprentissage par projet",
+    name: "Esprit d'équipe & Collaboration",
     status: "acquired",
     category: "transversal",
     note: {
-      fr: "Autonomie face à un cahier des charges, recherche et itération",
-      en: "Autonomy with specifications, research, iterative problem solving"
+      fr: "Travail en équipe sur R-TYPE et encadrement d'ateliers chez Digital Ninja",
+      en: "Team collaboration on R-TYPE and workshop mentoring at Digital Ninja"
     }
   },
   {
-    name: "Prototypage & Sens produit",
+    name: "Esprit de responsabilité & Rigueur",
     status: "acquired",
     category: "transversal",
     note: {
-      fr: "Transformation d'un besoin terrain réel en solution numérique concrète",
-      en: "Translating real-world business needs into concrete digital prototypes"
+      fr: "Organisation, ponctualité et engagement sur les livrables techniques et humains",
+      en: "Organization, reliability and thorough commitment to technical deliverables"
     }
   },
   {
-    name: "Rigueur & Curiosité technique",
+    name: "Autonomie & Résolution de problèmes",
     status: "acquired",
     category: "transversal",
     note: {
-      fr: "Volonté constante de comprendre le fonctionnement sous-jacent du code",
-      en: "Continuous drive to understand underlying systems and mechanisms"
+      fr: "Capacité à chercher la solution par soi-même et transformer un besoin en prototype",
+      en: "Ability to self-direct research and turn requirements into working prototypes"
     }
   }
 ];

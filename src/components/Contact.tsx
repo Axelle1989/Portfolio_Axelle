@@ -6,7 +6,10 @@ import {
   Send, 
   CheckCircle2, 
   ArrowUpRight,
-  MessageSquare
+  MessageSquare,
+  Mail,
+  Phone,
+  FileDown
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
@@ -25,9 +28,7 @@ export const Contact: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Si une adresse e-mail cible est configurée, prépare un mailto direct ou enregistre
-    const targetEmail = profileData.email || 'axelle.hossou@epitech.eu';
-    const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(
+    const mailtoUrl = `mailto:${profileData.email}?subject=${encodeURIComponent(
       formData.subject || `Message de ${formData.name}`
     )}&body=${encodeURIComponent(
       `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -36,7 +37,6 @@ export const Contact: React.FC = () => {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      // Ouvre le client e-mail par défaut
       window.location.href = mailtoUrl;
     }, 600);
   };
@@ -62,21 +62,63 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* Direct Details Column */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4">
             
+            {/* Email Card */}
+            <a
+              href={`mailto:${profileData.email}`}
+              className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    {t.contact.emailTitle}
+                  </h3>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 group-hover:text-brand-500 transition-colors">
+                    {profileData.email}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-brand-500 transition-colors" />
+            </a>
+
+            {/* Phone Card */}
+            <a
+              href={`tel:${profileData.phone.replace(/\s+/g, '')}`}
+              className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    Téléphone
+                  </h3>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 group-hover:text-emerald-500 transition-colors">
+                    {profileData.phone}
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-500 transition-colors" />
+            </a>
+
             {/* Location Card */}
             <div className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-brand-50 dark:bg-brand-950/60 flex items-center justify-center text-brand-600 dark:text-brand-400 shrink-0">
-                <MapPin className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0">
+                <MapPin className="w-5 h-5 text-brand-500" />
               </div>
               <div>
                 <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   {t.contact.locationTitle}
                 </h3>
-                <p className="text-base font-bold text-slate-900 dark:text-white mt-0.5">
-                  {t.contact.locationValue}
+                <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">
+                  {profileData.location}
                 </p>
-                <p className="text-xs text-slate-500 mt-1">Epitech Bénin • Disponible pour opportunités</p>
+                <p className="text-xs text-slate-500 mt-1">Epitech Bénin • Disponible pour stages & alternances</p>
               </div>
             </div>
 
@@ -103,35 +145,51 @@ export const Contact: React.FC = () => {
               <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-brand-500 transition-colors" />
             </a>
 
-            {/* LinkedIn Card Slot */}
-            {profileData.linkedinUrl ? (
-              <a
-                href={profileData.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/60 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
-                    <LinkedinIcon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                      LinkedIn
-                    </h3>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">
-                      Profil Professionnel
-                    </p>
-                  </div>
+            {/* LinkedIn Card */}
+            <a
+              href={profileData.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between group hover:border-brand-500/50 transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/60 flex items-center justify-center text-sky-600 dark:text-sky-400 shrink-0">
+                  <LinkedinIcon className="w-5 h-5" />
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-brand-500 transition-colors" />
-              </a>
-            ) : (
-              <div className="p-4 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center gap-3">
-                <LinkedinIcon className="w-4 h-4 text-slate-400" />
-                <span>Profil LinkedIn bientôt disponible</span>
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                    LinkedIn
+                  </h3>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5 group-hover:text-sky-500 transition-colors">
+                    @Axelle HOSSOU
+                  </p>
+                </div>
               </div>
-            )}
+              <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-sky-500 transition-colors" />
+            </a>
+
+            {/* Download CV Card */}
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 rounded-2xl glass-card border border-brand-500/30 bg-brand-50/50 dark:bg-brand-950/30 flex items-center justify-between group hover:border-brand-500 transition-all"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center shrink-0">
+                  <FileDown className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-brand-600 dark:text-brand-400">
+                    Curriculum Vitae
+                  </h3>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">
+                    Télécharger mon CV (PDF)
+                  </p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-brand-500 group-hover:translate-x-0.5 transition-transform" />
+            </a>
 
           </div>
 

@@ -165,7 +165,6 @@ export const Contact: React.FC = () => {
                 <p className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">
                   {profileData.location}
                 </p>
-                <p className="text-xs text-slate-500 mt-1">Epitech Bénin • Disponible pour stages & alternances</p>
               </div>
             </div>
 

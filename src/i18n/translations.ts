@@ -43,7 +43,7 @@ export const translations = {
         "Conception de solutions adaptées à des besoins d'entreprises réels",
         "Résolution collaborative de problèmes complexes"
       ],
-      visionText: "Mon ambition est d'acquérir une solide expérience professionnelle en stage ou alternance, puis de poursuivre mon parcours académique à l'étranger dans les domaines de l'informatique, de l'IA ou de la Data."
+      visionText: "Mon ambition est d'acquérir une solide expérience professionnelle en stage ou alternance, puis de poursuivre mon parcours académique dans les domaines de l'informatique, de l'IA ou de la Data."
     },
     skills: {
       sectionBadge: "Expertise en construction",
@@ -171,7 +171,7 @@ export const translations = {
         "Building digital solutions tailored for real business operations",
         "Collaborative problem-solving on complex systems"
       ],
-      visionText: "My ambition is to gain solid industry experience through internships and work-study opportunities, before pursuing international graduate studies in computer science, AI, or Data."
+      visionText: "My ambition is to gain solid industry experience through internships and work-study opportunities, before pursuing graduate studies in computer science, AI, or Data."
     },
     skills: {
       sectionBadge: "Growing Skillset",

@@ -68,7 +68,7 @@ export const About: React.FC = () => {
               </p>
               <div className="pt-2 flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
                 <Globe2 className="w-3.5 h-3.5 text-accent-cyan" />
-                <span>Cotonou $\rightarrow$ Projets & Études à l'international</span>
+                <span>Cotonou $\rightarrow$ Projets & Études supérieures</span>
               </div>
             </div>
 

@@ -56,8 +56,8 @@ export const traitsData: Trait[] = [
       en: "Continuous Growth & Ambition"
     },
     description: {
-      fr: "Motivée à enrichir continuellement mon bagage en développement logiciel, intelligence artificielle et data, en vue d'études supérieures à l'international.",
-      en: "Driven to continuously broaden my skills across software, artificial intelligence, and data, with long-term aspirations for international graduate studies."
+      fr: "Motivée à enrichir continuellement mon bagage en développement logiciel, intelligence artificielle et data, en vue d'études supérieures spécialisées.",
+      en: "Driven to continuously broaden my skills across software, artificial intelligence, and data, with aspirations for advanced graduate studies."
     },
     iconName: "GraduationCap"
   }

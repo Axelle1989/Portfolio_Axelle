@@ -24,21 +24,47 @@ export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const targetEmail = profileData.personalEmail || 'axellehossou690@gmail.com';
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const mailtoUrl = `mailto:${profileData.email}?subject=${encodeURIComponent(
-      formData.subject || `Message de ${formData.name}`
-    )}&body=${encodeURIComponent(
-      `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
+    try {
+      // Envoi direct vers axellehossou690@gmail.com via FormSubmit
+      const response = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: `[Portfolio] ${formData.subject || `Message de ${formData.name}`}`,
+          message: formData.message,
+          _template: 'table'
+        })
+      });
 
-    setTimeout(() => {
-      setLoading(false);
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Erreur réseau');
+      }
+    } catch {
+      // Fallback automatique vers mailto avec axellehossou690@gmail.com
+      const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(
+        `[Portfolio] ${formData.subject || `Message de ${formData.name}`}`
+      )}&body=${encodeURIComponent(
+        `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
       setSubmitted(true);
       window.location.href = mailtoUrl;
-    }, 600);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -226,6 +252,9 @@ export const Contact: React.FC = () => {
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                     {t.contact.formSuccess}
                   </h3>
+                  <p className="text-xs text-slate-500">
+                    Votre message a été transmis à <strong className="text-brand-500">{targetEmail}</strong>.
+                  </p>
                   <button
                     onClick={() => setSubmitted(false)}
                     className="text-xs text-brand-600 dark:text-brand-400 underline mt-2"
@@ -235,6 +264,19 @@ export const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-200/80 dark:border-slate-800">
+                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                      Destination : <strong className="text-brand-500 dark:text-brand-400 font-semibold">{targetEmail}</strong>
+                    </span>
+                    <a
+                      href={`mailto:${targetEmail}`}
+                      className="text-xs font-mono text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1"
+                      title="Ouvrir directement dans votre logiciel de messagerie"
+                    >
+                      <span>Lien direct mailto</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">

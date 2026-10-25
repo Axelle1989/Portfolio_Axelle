@@ -253,7 +253,7 @@ export const Contact: React.FC = () => {
                     {t.contact.formSuccess}
                   </h3>
                   <p className="text-xs text-slate-500">
-                    Votre message a été transmis à <strong className="text-brand-500">{targetEmail}</strong>.
+                    Votre message a été transmis.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}

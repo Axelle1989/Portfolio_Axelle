@@ -72,7 +72,7 @@ export const Hero: React.FC = () => {
                   <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
                     {t.hero.greeting}{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-brand-500 to-accent-cyan dark:from-brand-400 dark:via-brand-300 dark:to-accent-cyan">
-                      {profileData.shortName}.
+                      {t.hero.name}.
                     </span>
                   </h1>
                   <p className="text-xs sm:text-sm font-mono text-brand-600 dark:text-brand-400 font-semibold mt-0.5">

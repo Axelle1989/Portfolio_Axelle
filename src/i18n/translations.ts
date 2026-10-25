@@ -18,8 +18,8 @@ export const translations = {
       switchLang: "English version",
     },
     hero: {
-      greeting: "Bonjour, moi c'est",
-      name: "Axelle.",
+      greeting: "Hello, moi c'est",
+      name: "Axelle HOSSOU",
       badge: "Étudiante Tek 3 • Epitech Bénin",
       location: "Basée à Cotonou, Bénin",
       bio: "Étudiante en informatique à Epitech Bénin, je conçois des solutions numériques à travers le développement web et logiciel, tout en explorant l'intelligence artificielle et l'analyse de données.",
@@ -147,7 +147,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hello, I am",
-      name: "Axelle.",
+      name: "Axelle HOSSOU",
       badge: "Tek 3 Student • Epitech Benin",
       location: "Based in Cotonou, Benin",
       bio: "Computer science student at Epitech Benin, I build digital solutions through web and software development, while exploring artificial intelligence and data analysis.",

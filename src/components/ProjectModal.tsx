@@ -187,11 +187,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 <GithubIcon className="w-4 h-4" />
                 <span>{t.projects.viewCode}</span>
               </a>
-            ) : (
-              <span className="text-xs text-slate-500 font-mono italic">
-                {t.projects.repoAvailableSoon}
-              </span>
-            )}
+            ) : null}
           </div>
 
           <button

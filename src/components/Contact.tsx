@@ -264,19 +264,6 @@ export const Contact: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-200/80 dark:border-slate-800">
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                      Destination : <strong className="text-brand-500 dark:text-brand-400 font-semibold">{targetEmail}</strong>
-                    </span>
-                    <a
-                      href={`mailto:${targetEmail}`}
-                      className="text-xs font-mono text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1"
-                      title="Ouvrir directement dans votre logiciel de messagerie"
-                    >
-                      <span>Lien direct mailto</span>
-                      <ArrowUpRight className="w-3 h-3" />
-                    </a>
-                  </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">

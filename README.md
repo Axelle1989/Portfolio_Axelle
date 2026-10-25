@@ -127,7 +127,5 @@ Ouvrez le fichier `src/data/projects.ts` et ajoutez un objet respectant l'interf
 
 ## 🌐 Déploiement
 
-Le site est entièrement statique et optimisé pour être hébergé gratuitement en quelques secondes sur :
-- **Vercel** : Connectez votre compte GitHub, sélectionnez le dépôt `Portfolio_Axelle`, et cliquez sur *Deploy*.
-- **Netlify** : Glissez-déposez le dossier `dist/` ou connectez le dépôt GitHub avec la commande `npm run build` et le dossier de publication `dist`.
-- **GitHub Pages** : Déploiement via GitHub Actions.
+Le site est entièrement statique et optimisé pour être hébergé sur
+- **Netlify** 
